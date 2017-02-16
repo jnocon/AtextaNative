@@ -25,7 +25,7 @@ export default class PresentationScreen extends React.Component {
             </Text>
           </View>
 
-          <RoundedButton onPress={NavigationActions.componentExamples}>
+          <RoundedButton onPress={NavigationActions.messagesList}>
            Messages
           </RoundedButton>
 
