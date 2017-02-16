@@ -22,5 +22,9 @@
    "themeSettings": "Theme Settings",
    "deviceDetails": "Device Details",
    "noItems": "No Items",
-   "search": "Search"
+   "search": "Search",
+   "GroupName": "Group Name",
+   "Method": "Message Method",
+   "SaveGroup": "Save Group"
+   
 }
