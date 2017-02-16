@@ -24,6 +24,7 @@ import GroupsList from '../Containers/GroupsList'
 import MessagesList from '../Containers/MessagesList'
 import GroupDetails from '../Containers/GroupDetails'
 import RecipientDetails from '../Containers/RecipientDetails'
+import MessageDetails from '../Containers/MessageDetails'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -50,6 +51,7 @@ class NavigationRouter extends Component {
             <Scene key='theme' component={ThemeScreen} title='Theme' />
             <Scene key='groupDetails' component={GroupDetails} title='Group Details' />
             <Scene key='recipientDetails' component={RecipientDetails} title='Recipient Details' />
+            <Scene key='messageDetails' component={MessageDetails} title='Message Details' />
 
             {/* Custom navigation bar example */}
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />
