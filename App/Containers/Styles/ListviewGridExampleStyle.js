@@ -17,7 +17,15 @@ export default StyleSheet.create({
     alignItems: 'center',
     margin: Metrics.baseMargin,
     backgroundColor: Colors.fire,
-    borderRadius: Metrics.smallMargin
+    borderRadius: 50,
+    shadowColor: '#fffaf0',
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
+
   },
   boldLabel: {
     fontWeight: 'bold',

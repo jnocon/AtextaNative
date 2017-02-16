@@ -21,7 +21,7 @@ export default class PresentationScreen extends React.Component {
 
           <View style={styles.section} >
             <Text style={styles.sectionText} >
-              Click either messages or groups to get started or tutorial for an step by step guide. 
+              Click either messages or groups to get started or tutorial for an step by step guide.
             </Text>
           </View>
 
@@ -29,11 +29,11 @@ export default class PresentationScreen extends React.Component {
            Messages
           </RoundedButton>
 
-          <RoundedButton onPress={NavigationActions.usageExamples}>
+          <RoundedButton onPress={NavigationActions.groupsList}>
             Groups
           </RoundedButton>
 
-          <RoundedButton onPress={NavigationActions.apiTesting}>
+          <RoundedButton onPress={NavigationActions.usageExamples}>
             Tutorial
           </RoundedButton>
 
