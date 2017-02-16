@@ -26,7 +26,7 @@ class MessageGroupView extends React.Component {
     * Usually this should come from Redux mapStateToProps
     *************************************************************/
     const dataObjects = [
-      {title: 'All Students', description: 'Slack'},
+      {title: 'All Students', description: 'Slack'}
     ]
 
     /* ***********************************************************

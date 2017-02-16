@@ -14,7 +14,6 @@ import { connect } from 'react-redux'
 import Styles from './Styles/LoginScreenStyle'
 import {Metrics} from '../Themes'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-import I18n from 'react-native-i18n'
 import MessageGroupView from './MessageGroupView'
 
 // type GroupDetailsProps = {
