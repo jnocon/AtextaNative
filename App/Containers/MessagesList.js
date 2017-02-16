@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { View, ListView, Text } from 'react-native'
+import { View, ListView, Text, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import RoundedButton from '../Components/RoundedButton'
 // import { Actions as NavigationActions } from 'react-native-router-flux'
@@ -78,11 +78,13 @@ class MessagesList extends React.Component {
     // You can condition on sectionID (key as string), for different cells
     // in different sections
     return (
-      <View style={styles.row}>
-        <Text style={styles.boldLabel}>{sectionID} - {rowData.title}</Text>
-        <Text style={styles.label}>{rowData.groupName}</Text>
-        <Text style={styles.label}>{rowData.description}</Text>
-      </View>
+      <TouchableOpacity>
+        <View style={styles.row}>
+          <Text style={styles.boldLabel}>{sectionID} - {rowData.title}</Text>
+          <Text style={styles.label}>{rowData.groupName}</Text>
+          <Text style={styles.label}>{rowData.description}</Text>
+        </View>
+      </TouchableOpacity>
     )
   }
 

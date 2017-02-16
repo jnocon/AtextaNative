@@ -5,15 +5,12 @@ import { View, Text, ListView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import RoundedButton from '../Components/RoundedButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
-
 // For empty lists
 import AlertMessage from '../Components/AlertMessage'
-
 // Styles
-import styles from './Styles/ListviewGridExampleStyle'
+import styles from './Styles/ListviewExampleStyle'
 
-class GroupsList extends React.Component {
-
+class RecipientsList extends React.Component {
   state: {
     dataSource: Object
   }
@@ -21,18 +18,6 @@ class GroupsList extends React.Component {
   constructor (props) {
     super(props)
     /* ***********************************************************
-    * STEP 1
-    * This is an array of objects with the properties you desire
-    * Usually this should come from Redux mapStateToProps
-    *************************************************************/
-    const dataObjects = [
-      {title: 'All Students', description: 'Slack'},
-      {title: "HIR's", description: 'Email'},
-      {title: 'Ricky and Serge', description: 'Text'}
-    ]
-
-    /* ***********************************************************
-    * STEP 2
     * Teach datasource how to detect if rows are different
     * Make this function fast!  Perhaps something like:
     *   (r1, r2) => r1.id !== r2.id}
@@ -42,6 +27,12 @@ class GroupsList extends React.Component {
     // DataSource configured
     const ds = new ListView.DataSource({rowHasChanged})
 
+    const dataObjects = [
+        {name: 'Daniel'},
+        {name: 'Jesse'},
+        {name: 'Ricky'},
+        {name: 'Sean'}
+    ]
     // Datasource is always in state
     this.state = {
       dataSource: ds.cloneWithRows(dataObjects)
@@ -49,26 +40,23 @@ class GroupsList extends React.Component {
   }
 
   /* ***********************************************************
-  * STEP 3
   * `renderRow` function -How each cell/row should be rendered
   * It's our best practice to place a single component here:
   *
   * e.g.
     return <MyCustomCell title={rowData.title} description={rowData.description} />
   *************************************************************/
-  renderRow (rowData) {
+  renderRow (recipients) {
     return (
-      <TouchableOpacity onPress={NavigationActions.groupDetails}>
+      <TouchableOpacity onPress={NavigationActions.recipientDetails}>
         <View style={styles.row}>
-          <Text style={styles.boldLabel}>{rowData.title}</Text>
-          <Text style={styles.label}>{rowData.description}</Text>
+          <Text style={styles.boldLabel}>{recipients.name}</Text>
         </View>
       </TouchableOpacity>
     )
   }
 
   /* ***********************************************************
-  * STEP 4
   * If your datasource is driven by Redux, you'll need to
   * reset it when new data arrives.
   * DO NOT! place `cloneWithRows` inside of render, since render
@@ -76,14 +64,14 @@ class GroupsList extends React.Component {
   * state's datasource on newProps.
   *
   * e.g.
-    componentWillReceiveProps (newProps) {
-      if (newProps.someData) {
-        this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(newProps.someData)
-        })
-      }
-    }
   *************************************************************/
+//   componentWillReceiveProps (newProps) {
+//     if (newProps.results) {
+//       this.setState({
+//         dataSource: this.state.dataSource.cloneWithRows(newProps.results)
+//       })
+//     }
+//   }
 
   // Used for friendly AlertMessage
   // returns true if the dataSource is empty
@@ -94,15 +82,16 @@ class GroupsList extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <AlertMessage title='Click The Button Below to Create a group!' show={this.noRowData()} />
+        <AlertMessage title='Nothing to See Here, Move Along' show={this.noRowData()} />
         <ListView
           contentContainerStyle={styles.listContent}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
           pageSize={15}
+          enableEmptySections
         />
-        <RoundedButton onPress={NavigationActions.groupDetails}>
-           Create New Group
+        <RoundedButton onPress={NavigationActions.recipientDetails}>
+           Add New Recipient (NF)
         </RoundedButton>
       </View>
     )
@@ -111,8 +100,9 @@ class GroupsList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    // ...redux state to props here
+    // searchTerm: state.search.searchTerm,
+    // results: state.search.results
   }
 }
 
-export default connect(mapStateToProps)(GroupsList)
+export default connect(mapStateToProps)(RecipientsList)
