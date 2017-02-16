@@ -16,38 +16,29 @@ export default class PresentationScreen extends React.Component {
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
         <ScrollView style={styles.container}>
           <View style={styles.centered}>
-            <Image source={Images.clearLogo} style={styles.logo} />
+            <Image source={Images.atextaLogo} style={styles.logo} />
           </View>
 
           <View style={styles.section} >
             <Text style={styles.sectionText} >
-              Default screens for development, debugging, and alpha testing
-              are available below.
+              Click either messages or groups to get started or tutorial for an step by step guide.
             </Text>
           </View>
 
           <RoundedButton onPress={NavigationActions.componentExamples}>
-            Component Examples Screen
+           Messages
+          </RoundedButton>
+
+          <RoundedButton onPress={NavigationActions.groupsList}>
+            Groups
           </RoundedButton>
 
           <RoundedButton onPress={NavigationActions.usageExamples}>
-            Usage Examples Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.apiTesting}>
-            API Testing Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.theme}>
-            Theme Screen
-          </RoundedButton>
-
-          <RoundedButton onPress={NavigationActions.deviceInfo}>
-            Device Info Screen
+            Tutorial
           </RoundedButton>
 
           <View style={styles.centered}>
-            <Text style={styles.subtitle}>Made with ❤️ by Infinite Red</Text>
+            <Text style={styles.subtitle}>Made with ❤️ by Dyslexa</Text>
           </View>
 
         </ScrollView>
