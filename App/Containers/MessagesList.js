@@ -139,6 +139,9 @@ class MessagesList extends React.Component {
         <RoundedButton onPress={NavigationActions.messageDetails}>
             Create New Message
         </RoundedButton>
+        <RoundedButton onPress={NavigationActions.secretMessageDetails}>
+            Create Secret Message
+        </RoundedButton>
       </View>
     )
   }
