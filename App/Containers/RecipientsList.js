@@ -93,7 +93,7 @@ class RecipientsList extends React.Component {
         <RoundedButton onPress={NavigationActions.recipientDetails}>
            Add New Recipient
         </RoundedButton>
-         <RoundedButton onPress={NavigationActions.addressBook}>
+        <RoundedButton onPress={NavigationActions.addressBook}>
            Add From Address Book
         </RoundedButton>
       </View>
