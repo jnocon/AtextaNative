@@ -12,7 +12,7 @@ import AlertMessage from '../Components/AlertMessage'
 // Styles
 import styles from './Styles/ListviewGridExampleStyle'
 
-class MessageGroupView extends React.Component {
+class GroupChooseView extends React.Component {
 
   state: {
     dataSource: Object
@@ -26,7 +26,9 @@ class MessageGroupView extends React.Component {
     * Usually this should come from Redux mapStateToProps
     *************************************************************/
     const dataObjects = [
-      {title: 'All Students', description: 'Slack'}
+      {title: 'All Students', description: 'Slack'},
+      {title: "HIR's", description: 'Email'},
+      {title: 'Ricky and Serge', description: 'Text'}
     ]
 
     /* ***********************************************************
@@ -56,7 +58,7 @@ class MessageGroupView extends React.Component {
   *************************************************************/
   renderRow (rowData) {
     return (
-      <TouchableOpacity onPress={NavigationActions.groupDetails}>
+      <TouchableOpacity onPress={NavigationActions.pop}>
         <View style={styles.row}>
           <Text style={styles.boldLabel}>{rowData.title}</Text>
           <Text style={styles.label}>{rowData.description}</Text>
@@ -99,8 +101,8 @@ class MessageGroupView extends React.Component {
           renderRow={this.renderRow}
           pageSize={15}
         />
-        <RoundedButton onPress={NavigationActions.groupChooseView}>
-           Choose Group
+        <RoundedButton onPress={NavigationActions.groupDetails}>
+           Create New Group
         </RoundedButton>
       </View>
     )
@@ -113,4 +115,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(MessageGroupView)
+export default connect(mapStateToProps)(GroupChooseView)
