@@ -16,7 +16,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin: Metrics.baseMargin,
-    backgroundColor: Colors.fire,
+    backgroundColor: Colors.teal,
     borderRadius: 50,
     shadowColor: '#fffaf0',
     shadowOpacity: 0.2,

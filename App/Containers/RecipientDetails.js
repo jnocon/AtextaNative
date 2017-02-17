@@ -14,6 +14,7 @@ import {
 import { connect } from 'react-redux'
 import Styles from './Styles/LoginScreenStyle'
 import {Images, Metrics} from '../Themes'
+import RoundedButton from '../Components/RoundedButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 // import I18n from 'react-native-i18n'
 
@@ -148,6 +149,10 @@ class RecipientDetails extends React.Component {
               onSubmitEditing={this.handleSaveDetails}
               placeholder='phone number, email, etc' />
           </View>
+
+          <RoundedButton >
+           Import From Phone Contacts (NF)
+        </RoundedButton>
 
           <View style={[Styles.loginRow]}>
             <TouchableOpacity style={Styles.loginButtonWrapper} onPress={this.handleSaveDetails}>

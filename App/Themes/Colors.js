@@ -1,7 +1,7 @@
 // @flow
 
 const colors = {
-  background: '#1F0808',
+  background: '#270943',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -19,7 +19,9 @@ const colors = {
   snow: 'white',
   ember: 'rgba(164, 0, 48, 0.5)',
   fire: '#e73536',
-  drawer: 'rgba(30, 30, 29, 0.95)'
+  drawer: 'rgba(30, 30, 29, 0.95)',
+  indigo: '#4b0082',
+  teal: '#008080'
 }
 
 export default colors

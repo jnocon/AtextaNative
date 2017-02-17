@@ -127,11 +127,11 @@ class MessageDetails extends React.Component {
               onChangeText={this.handleChangemessageName}
               underlineColorAndroid='transparent'
               onSubmitEditing={() => this.refs.method.focus()}
-              placeholder='Put Group Name Here' />
+              placeholder='Put Message Name Here' />
           </View>
 
           <View style={Styles.row}>
-            <Text style={Styles.rowLabel}>Method</Text>
+            <Text style={Styles.rowLabel}>Message Content</Text>
             <TextInput
               ref='method'
               style={textInputStyle}
@@ -144,7 +144,7 @@ class MessageDetails extends React.Component {
               onChangeText={this.handleChangemethod}
               underlineColorAndroid='transparent'
               onSubmitEditing={this.handleSaveDetails}
-              placeholder='Text, Slack, Email' />
+              placeholder='Running late; Be there when I can!!!' />
           </View>
 
           <View style={Styles.row}>
