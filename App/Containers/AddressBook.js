@@ -3,14 +3,13 @@
 import React from 'react'
 import { View, Text, ListView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
-import RoundedButton from '../Components/RoundedButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
 // For empty lists
 import AlertMessage from '../Components/AlertMessage'
 // Styles
 import styles from './Styles/ListviewExampleStyle'
 
-class RecipientsList extends React.Component {
+class AddressBook extends React.Component {
   state: {
     dataSource: Object
   }
@@ -48,7 +47,7 @@ class RecipientsList extends React.Component {
   *************************************************************/
   renderRow (recipients) {
     return (
-      <TouchableOpacity onPress={NavigationActions.recipientDetails}>
+      <TouchableOpacity onPress={NavigationActions.pop}>
         <View style={styles.row}>
           <Text style={styles.boldLabel}>{recipients.name}</Text>
         </View>
@@ -90,12 +89,6 @@ class RecipientsList extends React.Component {
           pageSize={15}
           enableEmptySections
         />
-        <RoundedButton onPress={NavigationActions.recipientDetails}>
-           Add New Recipient
-        </RoundedButton>
-        <RoundedButton onPress={NavigationActions.addressBook}>
-           Add From Address Book
-        </RoundedButton>
       </View>
     )
   }
@@ -108,4 +101,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(RecipientsList)
+export default connect(mapStateToProps)(AddressBook)

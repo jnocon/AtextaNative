@@ -8,7 +8,7 @@ const images = {
   tileBg: require('../Images/tile_bg.png'),
   background: require('../Images/BG.png'),
   atextaLogo: require('../Images/logo2.png'),
-  atextaBG: require('../Images/B_teal-green_FrPtVSTT.png')
+  atextaBG: require('../Images/purpleBG.png')
 }
 
 export default images
